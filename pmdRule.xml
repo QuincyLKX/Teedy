@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Rules"
+  xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+  <description>
+    My custom rules
+  </description>
+
+  <!-- 行數，用於近似衡量代碼行數 (LoC) -->
+  <rule ref="category/java/design.xml/NcssCount" />
+
+  <!-- 圈復雜度 (CC) -->
+  <rule ref="category/java/design.xml/CyclomaticComplexity"/>
+
+  <!-- 每個類的加權方法數 (WMC) -->
+  <rule ref="category/java/design.xml/TooManyMethods"/>
+
+  <!-- 對象間的耦合 (CBO) -->
+  <rule ref="category/java/design.xml/CouplingBetweenObjects"/>
+
+  <!-- 方法間的缺乏凝聚力 (LCOM) -->
+  <rule ref="category/java/design.xml/GodClass"/>
+</ruleset>
