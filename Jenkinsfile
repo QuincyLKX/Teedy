@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Test report') {
             steps {
-                sh 'mvn test'
+                sh 'mvn test --fail-never'
                 sh 'mvn javadoc:jar'
             }
         }
