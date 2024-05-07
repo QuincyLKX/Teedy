@@ -17,6 +17,11 @@ pipeline {
                 sh 'mvn test --fail-never'
                 sh 'mvn javadoc:jar'
             }
+            post {
+                always {
+                    archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', fingerprint: true
+                }
+            }
         }
     }
     post {
@@ -24,7 +29,6 @@ pipeline {
             archiveArtifacts artifacts: '**/target/site/**', fingerprint: true
             archiveArtifacts artifacts: '**/target/**/*.jar', fingerprint: true
             archiveArtifacts artifacts: '**/target/**/*.war', fingerprint: true
-            junit '**/target/surefire-reports/**/*.xml'
         }
     }
 }
